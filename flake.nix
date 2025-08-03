@@ -23,5 +23,6 @@
         }
       )
       nixpkgs.legacyPackages;
+    nixosModules.default = {pkgs, ...}: {environment.systemPackages = [self.packages."${pkgs.system}".default];};
   };
 }
